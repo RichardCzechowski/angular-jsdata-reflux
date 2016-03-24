@@ -20,3 +20,5 @@
   * This adds a count method to your resources
 - Configure your store (server.coffee  _configureStore)
   * This is your connection to your database
+- Add global events (constants.coffee)
+  * This creates some standard event strings available throughout the app
