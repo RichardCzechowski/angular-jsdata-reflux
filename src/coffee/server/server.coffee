@@ -7,6 +7,8 @@ express    = require 'express'
 http       = require 'http'
 middleware = require './middleware'
 routes     = require './routes'
+schema     = require './server_schema'
+SqlAdapter = require 'js-data-sql'
 w          = require 'when'
 _          = require '../underscore'
 
@@ -27,6 +29,7 @@ module.exports = class Server
         middleware.installAfter app
 
         @httpServer = http.createServer app
+        @store      = @_configureStore()
 
     start: ->
         w.promise (resolve, reject)=>
@@ -40,6 +43,22 @@ module.exports = class Server
             console.log "server is shutting down"
             @httpServer.close() =>
                 resolve this
+
+# Private Methods ##################################################################
+
+    _configureStore: ->
+        adapter = new SqlAdapter
+            client: 'mysql'
+            connection:
+                host: 'localhost'
+                database: 'usdanlsr28'
+                user: 'root'
+                password: 'root'
+            debug: false
+
+        schema.store.registerAdapter 'sql', adapter, default:true
+        schema.installExtensions()
+        return schema.store
 
 ############################################################################################################
 
