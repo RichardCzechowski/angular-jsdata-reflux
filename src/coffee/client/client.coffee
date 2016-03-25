@@ -18,13 +18,14 @@ require 'js-data-angular'
 require './modules/reflux'
 
 # Add 'require' statements for your other Angular module files here.
-require './modules/sample_module'
+require './modules/client_schema'
+require './modules/nutrition_module'
 
 
 # Add all your modules here.
 MODULES = [
     'reflux'
-    'sample'
+    'nutrition'
 ]
 
 ############################################################################################################

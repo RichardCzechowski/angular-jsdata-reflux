@@ -24,6 +24,12 @@
 - Add global events (constants.coffee)
   * This creates some standard event strings available throughout the app
 - Define a model for your resource (nutrition.coffee)
-- Add resource to server_schema `exports.Nutrition = store.defineResource require '../model/nutrition'`
-- Add a route `router.get '/nutrition', (req, res) -> ...`
-- You should now be able to navigate to your endpoints `Ex: http://localhost:8080/nutrition` and see the JSON for your response.
+  * Add resource to server_schema `exports.Nutrition = store.defineResource require '../model/nutrition'`
+  * Add a route `router.get '/nutrition', (req, res) -> ...`
+  * You should now be able to navigate to your endpoints `Ex: http://localhost:8080/nutrition` and see the JSON for your response.
+  * Create a file called client_schema.coffee and define a client side resource there
+  * NOTE: The `idAttribute` property needs to reflect the id column of your database, for the nutrition database this is `NDB_No`
+- Add a module for your endpoint
+  * See nutrition_module.coffee
+  * Include that module in client.coffee
+  * You can now use this module to display your data in your template

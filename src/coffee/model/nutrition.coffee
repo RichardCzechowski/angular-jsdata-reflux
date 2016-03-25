@@ -8,11 +8,8 @@ _ = require 'underscore'
 ############################################################################################################
 
 module.exports =
-
+    idAttribute: 'NDB_No'
     name:     'nutrition'
     endpoint: '/nutrition'
     table:    'FOOD_DES'
-    # methods:
-
-    #     toJSON: ->
-    #         return _.pick this, 'id', 'first_name', 'last_name'
+    # methods: You can extend this with methods like .toJSON, etc.
