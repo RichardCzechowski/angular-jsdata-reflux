@@ -3,9 +3,13 @@
 # All rights reserved.
 #
 
-_ = require 'underscore'
-inflections = require 'underscore.inflections'
+module.exports = _ = require 'underscore'
 
-_.mixin inflections
+_.mixin require 'underscore.inflections'
 
-module.exports = _
+_.mixin
+    gatherProperties: (dest, sources...)->
+        sources = _.flatten [sources]
+        for source in sources
+            _.extend dest, source
+        return dest

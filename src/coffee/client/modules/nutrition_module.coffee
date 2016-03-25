@@ -8,31 +8,23 @@ templates = require '../templates'
 
 ############################################################################################################
 
-nutrition = angular.module 'nutrition', ['schema']
+nutrition = angular.module 'nutrition', ['schema', 'reflux']
+
+require './nutrition_store'
 
 # Controllers ##########################################################################
 
 class NutritionController
 
-    constructor: ($scope, NutritionFactory) ->
-        @Nutrition = NutritionFactory
+    constructor: ($scope, NutritionStore, NutritionModelActions) ->
+        @Nutrition = NutritionStore
         @nutrition = null
         @error = null
         @$scope = $scope
 
-        @refresh()
-
-    refresh: ->
-        @Nutrition.findAll()
-            .then (nutrition) =>
-                @nutrition = nutrition
-                @$scope.nutrition = nutrition[0] #test
-                console.log @$scope
-                @$scope.$applyAsync()
-            .catch (error) =>
-                errorText = if error.data? then "#{error.data}" else "#{error}"
-                console.error "Could not fetch nutrition: #{errorText}"
-                @$scope.error = errorText
+        NutritionStore.$listen $scope, (event, id)->
+            $scope.nutritionData = NutritionStore.get()
+        NutritionModelActions.load()
 
 nutrition.controller 'NutritionController', NutritionController
 

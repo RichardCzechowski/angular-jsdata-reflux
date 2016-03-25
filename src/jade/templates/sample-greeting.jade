@@ -3,4 +3,6 @@
 //- All rights reserved.
 //-
 
-h1.greeting Data: {{nutrition}}!
+table
+  tr(ng-repeat="food in nutritionData")
+    td {{food.Shrt_Desc}}

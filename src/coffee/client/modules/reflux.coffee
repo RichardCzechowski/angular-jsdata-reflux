@@ -1,5 +1,5 @@
 angular = require 'angular'
-reflux = require 'reflux-core'
+reflux = require 'reflux'
 
 ##############################
 
@@ -13,4 +13,4 @@ refluxModule.factory 'reflux', ->
       $scope.$apply ->
         callback(event, id)
 
-    return reflux
+  return reflux
