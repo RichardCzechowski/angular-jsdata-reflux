@@ -20,3 +20,5 @@ exports.installExtensions = ->
 
         query.then (resultSet)->
             return resultSet[0].count
+
+exports.Nutrition = store.defineResource require '../model/nutrition'

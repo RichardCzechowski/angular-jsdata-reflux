@@ -2,6 +2,9 @@
 # Copyright (C) 2015 by Looker Data Services, Inc.
 # All rights reserved.
 #
+w          = require 'when'
+global.Promise = w.Promise # must be before JS-Data loads
+
 
 express    = require 'express'
 http       = require 'http'
@@ -9,7 +12,6 @@ middleware = require './middleware'
 routes     = require './routes'
 schema     = require './server_schema'
 SqlAdapter = require 'js-data-sql'
-w          = require 'when'
 _          = require '../underscore'
 
 ############################################################################################################

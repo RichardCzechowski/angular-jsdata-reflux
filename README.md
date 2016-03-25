@@ -4,10 +4,11 @@
 - Create a Mysql database of your choosing
   * I used https://github.com/nmaster/usdanl-sr28-mysql to create a db of nutrition facts
 - Install js-data and reflux via npm
-  * `npm install --save-dev es6-promise`
+  * `npm install --save when`
   * `npm install --save mysql knex js-data js-data-sql`
   * `npm install js-data-angular --save`
   * `npm install reflux-core --save`
+- In server.coffee, make sure the 'when' library is loaded before jsData
 - Create an angular reflux listener module (reflux.coffee)
   * Wrap reflux to allow angular to update in response to store changes
 - Create a readOnlyView (read_only_view.coffee)
@@ -22,3 +23,7 @@
   * This is your connection to your database
 - Add global events (constants.coffee)
   * This creates some standard event strings available throughout the app
+- Define a model for your resource (nutrition.coffee)
+- Add resource to server_schema `exports.Nutrition = store.defineResource require '../model/nutrition'`
+- Add a route `router.get '/nutrition', (req, res) -> ...`
+- You should now be able to navigate to your endpoints `Ex: http://localhost:8080/nutrition` and see the JSON for your response.
