@@ -12,6 +12,7 @@ ReadOnlyView = require '../../../read_only_view'
 
 angular.module('mixins').factory 'addModelStoreMixinActions', (reflux)->
     return (actions)->
+        # Adds asynchronous method
         _.extend actions, reflux.createActions
             load: { children: ['success', 'error'] }
 
