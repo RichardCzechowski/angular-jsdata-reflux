@@ -22,6 +22,8 @@ require './modules/client_schema'
 require './modules/mixins/mixins_module'
 require './modules/food_groups/nutrition_module'
 require './modules/food_groups/nutrition_store'
+require './modules/toggle/toggle_module'
+require './modules/toggle/toggle_store'
 
 
 # Add all your modules here.
@@ -29,6 +31,7 @@ MODULES = [
     'reflux'
     'mixins'
     'nutrition'
+    'toggle'
 ]
 
 ############################################################################################################

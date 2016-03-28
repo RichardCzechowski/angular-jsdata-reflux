@@ -13,3 +13,5 @@ module.exports =
         INVALID: 'invalid'
         REMOVE: 'remove'
         SAVE:   'save'
+        OPEN: 'open'
+        CLOSE: 'close'

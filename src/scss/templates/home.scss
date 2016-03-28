@@ -3,6 +3,18 @@
  * All rights reserved.
  */
 
-h1.greeting {
-    color: $color-blue-light;
-}
+.table-inverse{
+  .list-item{
+    height: 3em;
+    line-height: 3em;
+    border-bottom: 1px solid #7A7A7A;
+  }
+  .title {
+    display: inline-block;
+    width: 90%;
+  }
+  .toggle{
+    display: inline-block;
+    width: 10%;
+  }
+ }

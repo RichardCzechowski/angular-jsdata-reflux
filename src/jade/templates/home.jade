@@ -7,8 +7,7 @@ form
   fieldset(class="form-group")
     label(for="protein") Enter Desired Protein
     input(type="text" class="form-control" placeholder="Protein in grams")
-table(class="table table-inverse")
-  tr(ng-repeat="food in nutritionData")
-    td {{food.FdGrp_Desc}}
-    td(class="fa fa-chevron-down")
-
+ul(class="table-inverse")
+  li(class="list-item" ng-repeat="food in nutritionData")
+    .title {{food.FdGrp_Desc}}
+    .toggle(class="fa" ng-class="{'fa-chevron-down': isOpen, 'fa-chevron-up': !isOpen}" ng-click="toggleOpen(food.FdGrp_Cd)")
