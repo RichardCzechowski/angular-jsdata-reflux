@@ -1,0 +1,13 @@
+//-
+//- Copyright (C) 2015 by Looker Data Services, Inc.
+//- All rights reserved.
+//-
+
+form
+  fieldset(class="form-group")
+    label(for="protein") Enter Desired Protein
+    input(type="text" class="form-control" placeholder="Protein in grams")
+table(class="table table-inverse")
+  tr(ng-repeat="food in nutritionData")
+    td {{food.FdGrp_Desc}}
+    td(class="fa fa-chevron-down" dropdown)

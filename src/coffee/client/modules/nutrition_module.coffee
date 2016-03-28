@@ -28,12 +28,12 @@ class NutritionController
 
 nutrition.controller 'NutritionController', NutritionController
 
-nutrition.directive 'sampleGreeting', ->
+nutrition.directive 'home', ->
     return {
         restrict: 'C'
         controller: 'NutritionController'
         scope: {}
-        template: templates['sample-greeting']
+        template: templates['home']
     }
 
 # add more things to your module here...
