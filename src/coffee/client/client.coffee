@@ -20,8 +20,8 @@ require './modules/reflux'
 # Add 'require' statements for your other Angular module files here.
 require './modules/client_schema'
 require './modules/mixins/mixins_module'
-require './modules/nutrition_module'
-require './modules/nutrition_store'
+require './modules/food_groups/nutrition_module'
+require './modules/food_groups/nutrition_store'
 
 
 # Add all your modules here.

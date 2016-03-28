@@ -4,7 +4,7 @@
 #
 
 angular = require 'angular'
-templates = require '../templates'
+templates = require '../../templates'
 
 ############################################################################################################
 
